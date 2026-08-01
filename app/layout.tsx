@@ -1,18 +1,30 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Playfair_Display, Montserrat } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-montserrat',
+})
 
 export const metadata: Metadata = {
-  title: 'Restaurant EMP',
-  description: 'AI-powered enterprise management platform for restaurant chains',
+  title: 'LA FIAMMA | Luxury Italian Pizza Restaurant',
+  description: 'Experience authentic handcrafted Italian pizza, wood-fired to perfection. Pure luxury in every slice at LA FIAMMA.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${playfair.variable} ${montserrat.variable} bg-luxury-black text-luxury-cream antialiased selection:bg-luxury-gold selection:text-luxury-black`}>
+        {children}
+      </body>
     </html>
   )
 }
