@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import SmokeParticles from './SmokeParticles'
+import CinematicLighting from './CinematicLighting'
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -22,6 +23,9 @@ export default function Hero() {
       ref={containerRef}
       className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-transparent"
     >
+      {/* Dynamic cinematic lighting overlay */}
+      <CinematicLighting />
+
       {/* Embedded Ember particles & fireplace glow effects */}
       <SmokeParticles />
 
