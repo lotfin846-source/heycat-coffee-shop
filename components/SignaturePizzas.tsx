@@ -35,7 +35,7 @@ const signaturePizzas = [
 
 export default function SignaturePizzas() {
   return (
-    <section id="signature" className="relative py-24 lg:py-36 bg-luxury-dark overflow-hidden">
+    <section id="signature" className="relative py-24 lg:py-36 bg-luxury-dark/95 overflow-hidden backdrop-blur-[2px]">
       {/* Decorative luxury fire glow overlay */}
       <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-luxury-fire/10 blur-[120px] pointer-events-none" />
       <div className="absolute top-10 left-1/3 h-96 w-96 rounded-full bg-luxury-gold/5 blur-[120px] pointer-events-none" />

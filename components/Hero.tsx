@@ -7,48 +7,21 @@ import SmokeParticles from './SmokeParticles'
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Create beautiful parallax scroll effects
+  // Parallax scroll effects for text elements
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end start']
   })
 
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '40%'])
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
 
   return (
     <section
       id="home"
       ref={containerRef}
-      className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-luxury-black"
+      className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-transparent"
     >
-      {/* Cinematic Background Media Container with Parallax */}
-      <motion.div
-        style={{ y: bgY }}
-        className="absolute inset-0 h-full w-full select-none"
-      >
-        {/* Background Loop Video (Cinematic fire / artisan dough) */}
-        {/* We use a high quality unspash background as backup and overlay video */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541832676-9b763b0239ab?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center" />
-
-        {/* Fallback/Overlay HTML5 Video for supreme live ambiance */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover opacity-60 mix-blend-screen pointer-events-none"
-        >
-          {/* Loop of dark ambient embers / sparks or wood-fire */}
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-fire-burning-in-a-fireplace-closeup-4663-large.mp4" type="video/mp4" />
-        </video>
-
-        {/* Deep, dramatic, high-contrast dark overlay gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-luxury-black via-luxury-black/60 to-luxury-black/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-luxury-black/90 via-transparent to-luxury-black/90" />
-      </motion.div>
-
       {/* Embedded Ember particles & fireplace glow effects */}
       <SmokeParticles />
 

@@ -105,7 +105,7 @@ export default function MenuSection() {
   const [activeCategory, setActiveCategory] = useState('Pizza')
 
   return (
-    <section id="menu" className="relative py-24 lg:py-36 bg-luxury-black overflow-hidden border-y border-luxury-charcoal">
+    <section id="menu" className="relative py-24 lg:py-36 bg-luxury-black/90 overflow-hidden border-y border-luxury-charcoal backdrop-blur-[2px]">
       {/* Ambient background grids */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(212,175,55,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(212,175,55,0.015)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 

@@ -26,7 +26,7 @@ export default function Reservation() {
   }
 
   return (
-    <section id="reservations" className="relative py-24 lg:py-36 bg-luxury-dark overflow-hidden border-t border-luxury-charcoal">
+    <section id="reservations" className="relative py-24 lg:py-36 bg-luxury-dark/95 overflow-hidden border-t border-luxury-charcoal backdrop-blur-[2px]">
       {/* Absolute backgrounds */}
       <div className="absolute -bottom-20 left-10 h-96 w-96 rounded-full bg-luxury-fire/5 blur-[120px] pointer-events-none" />
       <div className="absolute top-10 right-10 h-80 w-80 rounded-full bg-luxury-gold/5 blur-[100px] pointer-events-none" />
@@ -53,9 +53,10 @@ export default function Reservation() {
             {!submitted ? (
               <motion.form
                 key="booking-form"
-                initial={{ opacity: 1 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.5 }}
                 onSubmit={handleSubmit}
                 className="space-y-6"
               >
