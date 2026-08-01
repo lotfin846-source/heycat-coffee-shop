@@ -7,9 +7,144 @@
 }
 
 body {
-  @apply min-h-screen bg-slate-950 text-slate-100 antialiased;
+  background-color: #090909;
+  color: #fcfaf2;
+  font-family: var(--font-montserrat), sans-serif;
+  overflow-x: hidden;
 }
 
-* {
-  @apply box-border;
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090909;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2d1e15;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Luxury Utilities */
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+
+  .text-gold-gradient {
+    background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-fire-gradient {
+    background: linear-gradient(135deg, #ff9e4f 0%, #ff5a1f 60%, #992400 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glassmorphism {
+    background: rgba(17, 17, 17, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  .glassmorphism-light {
+    background: rgba(252, 250, 242, 0.05);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(252, 250, 242, 0.1);
+  }
+
+  .glassmorphism-gold {
+    background: rgba(9, 9, 9, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+  }
+
+  .gold-border-glow {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.1), inset 0 0 15px rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+  }
+}
+
+/* Custom Cursor support */
+.custom-cursor-active {
+  cursor: none !important;
+}
+
+.custom-cursor-active a,
+.custom-cursor-active button,
+.custom-cursor-active [role="button"] {
+  cursor: none !important;
+}
+
+/* Floating particle simulation via purely decorative components */
+@keyframes spark-1 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.8; }
+  100% { transform: translate(-100px, -400px) scale(0.2); opacity: 0; }
+}
+
+@keyframes spark-2 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.9; }
+  100% { transform: translate(120px, -500px) scale(0.3); opacity: 0; }
+}
+
+@keyframes spark-3 {
+  0% { transform: translate(0, 0) scale(1.2); opacity: 0.7; }
+  100% { transform: translate(50px, -600px) scale(0.1); opacity: 0; }
+}
+
+/* Fire flickering underlay background */
+.fire-underlay {
+  filter: blur(80px);
+  animation: fire-glow-pulse 6s ease-in-out infinite alternate;
+}
+
+@keyframes fire-glow-pulse {
+  0% {
+    transform: scale(1) translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.15) translateY(-10px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(0.95) translateY(5px);
+    opacity: 0.5;
+  }
+}
+
+/* Animated horizontal border-reveal lines */
+.border-reveal {
+  position: relative;
+}
+
+.border-reveal::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+  transform: scaleX(0);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.border-reveal:hover::after {
+  transform: scaleX(1);
 }
