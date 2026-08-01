@@ -43,7 +43,7 @@ const ingredients = [
 
 export default function Ingredients() {
   return (
-    <section id="ingredients" className="relative py-24 lg:py-36 bg-luxury-black overflow-hidden">
+    <section id="ingredients" className="relative py-24 lg:py-36 bg-luxury-black/90 overflow-hidden backdrop-blur-[2px]">
       {/* Decorative gradients */}
       <div className="absolute top-1/4 left-10 h-72 w-72 rounded-full bg-luxury-brown/10 blur-[100px] pointer-events-none" />
 

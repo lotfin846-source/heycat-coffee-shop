@@ -5,7 +5,7 @@ import { Award, Star, Quote } from 'lucide-react'
 
 export default function ChefSection() {
   return (
-    <section id="chef" className="relative py-24 lg:py-36 bg-luxury-dark overflow-hidden border-b border-luxury-charcoal">
+    <section id="chef" className="relative py-24 lg:py-36 bg-luxury-dark/95 overflow-hidden border-b border-luxury-charcoal backdrop-blur-[2px]">
       {/* Dynamic fire glowing spheres */}
       <div className="absolute top-1/2 right-1/4 h-[400px] w-[400px] rounded-full bg-luxury-fire/5 blur-[120px] pointer-events-none" />
 
