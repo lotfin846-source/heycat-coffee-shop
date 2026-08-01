@@ -53,7 +53,7 @@ export default function Gallery() {
   const [activeImage, setActiveImage] = useState<string | null>(null)
 
   return (
-    <section id="gallery" className="relative py-24 lg:py-36 bg-luxury-dark/95 overflow-hidden border-t border-luxury-charcoal backdrop-blur-[2px]">
+    <section id="gallery" className="relative py-24 lg:py-36 bg-luxury-dark overflow-hidden border-t border-luxury-charcoal">
       {/* Dynamic fire glowing spheres */}
       <div className="absolute top-1/3 right-10 h-80 w-80 rounded-full bg-luxury-gold/5 blur-[100px] pointer-events-none" />
 

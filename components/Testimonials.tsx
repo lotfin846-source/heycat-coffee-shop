@@ -26,7 +26,7 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative py-24 lg:py-36 bg-luxury-black/90 overflow-hidden border-t border-luxury-charcoal backdrop-blur-[2px]">
+    <section id="testimonials" className="relative py-24 lg:py-36 bg-luxury-black overflow-hidden border-t border-luxury-charcoal">
       {/* Soft warm glow background */}
       <div className="absolute top-1/2 left-1/2 h-[350px] w-[350px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-luxury-fire/5 blur-[120px] pointer-events-none" />
 

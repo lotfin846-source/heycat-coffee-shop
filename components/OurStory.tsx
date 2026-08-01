@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function OurStory() {
   return (
-    <section id="story" className="relative py-24 lg:py-36 bg-luxury-black/90 overflow-hidden border-t border-luxury-charcoal backdrop-blur-[2px]">
+    <section id="story" className="relative py-24 lg:py-36 bg-luxury-black overflow-hidden border-t border-luxury-charcoal">
       {/* Decorative ambient elements */}
       <div className="absolute top-1/4 left-10 h-72 w-72 rounded-full bg-luxury-brown/20 blur-[100px] pointer-events-none" />
 
@@ -100,7 +100,7 @@ export default function OurStory() {
               />
             </motion.div>
 
-            {/* Floating Overlapping Card */}
+            {/* Secondary Floating Overlapping Card */}
             <motion.div
               initial={{ opacity: 0, x: 50, y: 50 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
