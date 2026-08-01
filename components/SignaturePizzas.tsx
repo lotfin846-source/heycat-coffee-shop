@@ -35,7 +35,7 @@ const signaturePizzas = [
 
 export default function SignaturePizzas() {
   return (
-    <section id="signature" className="relative py-24 lg:py-36 bg-luxury-dark/95 overflow-hidden backdrop-blur-[2px]">
+    <section id="signature" className="relative py-24 lg:py-36 bg-luxury-dark/95 overflow-hidden backdrop-blur-[2px] perspective-[1000px]">
       {/* Decorative luxury fire glow overlay */}
       <div className="absolute bottom-10 right-10 h-96 w-96 rounded-full bg-luxury-fire/10 blur-[120px] pointer-events-none" />
       <div className="absolute top-10 left-1/3 h-96 w-96 rounded-full bg-luxury-gold/5 blur-[120px] pointer-events-none" />
@@ -84,15 +84,23 @@ export default function SignaturePizzas() {
               transition={{ duration: 0.8, delay: index * 0.15, cubicBezier: [0.16, 1, 0.3, 1] }}
               whileHover={{
                 y: -15,
-                boxShadow: '0 25px 50px -12px rgba(212, 175, 55, 0.15)',
+                rotateY: 2,
+                rotateX: -2,
+                boxShadow: '0 25px 60px -10px rgba(212, 175, 55, 0.2), 0 0 40px rgba(255, 90, 31, 0.15)',
               }}
               className="group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-luxury-black border border-luxury-charcoal p-4 transition-all duration-500 interactive-card hover:border-luxury-gold/40"
+              style={{ transformStyle: 'preserve-3d' }}
               data-cursor="Discover"
             >
               <div>
-                {/* Image Wrapper */}
+                {/* Image Wrapper with cinematic lighting and steam effects */}
                 <div className="relative overflow-hidden rounded-2xl aspect-square w-full bg-luxury-charcoal">
-                  <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/90 via-transparent to-transparent z-10 opacity-60" />
+
+                  {/* Premium Spotlight backdrop glow */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.18)_0%,transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
+
+                  {/* Gradient overlays */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/90 via-transparent to-transparent z-10 opacity-70" />
 
                   {/* Floating Luxury Tag */}
                   <div className="absolute left-4 top-4 z-20 flex items-center gap-1.5 rounded-full bg-luxury-black/80 px-3.5 py-1.5 border border-luxury-gold/20 backdrop-blur-md">
@@ -102,10 +110,20 @@ export default function SignaturePizzas() {
                     </span>
                   </div>
 
+                  {/* Hot steaming smoke line simulations */}
+                  <div className="absolute inset-0 pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    {/* Steam line 1 */}
+                    <div className="steam-line-1 absolute bottom-8 left-1/4 w-12 h-20 bg-gradient-to-t from-transparent via-white/[0.08] to-transparent rounded-full blur-[10px] transform -rotate-12" />
+                    {/* Steam line 2 */}
+                    <div className="steam-line-2 absolute bottom-12 left-1/2 w-16 h-24 bg-gradient-to-t from-transparent via-white/[0.09] to-transparent rounded-full blur-[12px] transform rotate-6" />
+                    {/* Steam line 3 */}
+                    <div className="steam-line-3 absolute bottom-6 right-1/4 w-10 h-16 bg-gradient-to-t from-transparent via-white/[0.06] to-transparent rounded-full blur-[8px] transform -rotate-3" />
+                  </div>
+
                   <img
                     src={pizza.image}
                     alt={pizza.name}
-                    className="h-full w-full object-cover transition-transform duration-[1.5s] group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-[2s] group-hover:scale-110"
                   />
                 </div>
 
